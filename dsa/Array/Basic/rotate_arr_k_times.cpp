@@ -56,3 +56,21 @@ int main() {
 
     return 0;
 }
+
+//Rotate elements to left by k steps
+// Intuition:
+// We can use the same reverse technique to rotate the array to the left by k steps.    
+// The idea is to reverse the first n-k elements, then reverse the last k elements and finally reverse the entire array.        
+void rotateLeft(vector<int>& nums, int k) {
+    int n = nums.size();
+    k = k % n; // Handle cases when k >= n
+
+    // Step 1: Reverse first n-k elements
+    reverse(nums.begin(), nums.end() - k); // [3,2,1,4,5,6,7]
+
+    // Step 2: Reverse last k elements
+    reverse(nums.end() - k, nums.end()); // [3,2,1,7,6,5,4]
+
+    // Step 3: Reverse entire array
+    reverse(nums.begin(), nums.end()); // [4,5,6,7,1,2,3]
+}
