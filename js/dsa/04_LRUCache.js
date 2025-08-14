@@ -6,6 +6,21 @@
 
 // Javascript Map is used to maintain the order of insertion and allow O(1) access time.
 
+// Intuition:
+
+
+// Cache has fixed capacity.
+// Use Map to preserve insertion order (needed for LRU).
+
+// put(key, value):
+//   - If key exists, delete it (to refresh order).
+//   - If capacity reached, remove first (LRU) key.
+//   - Insert key-value pair (becomes most recently used).
+
+// get(key):
+//   - If key missing, return -1.
+//   - If key exists, delete & reinsert to mark as most recent, then return value.
+
 class LRUCache {
     constructor(capacity) {
         this.capacity = capacity;
