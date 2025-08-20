@@ -19,3 +19,6 @@ function largestNumber(arr) {
     // Join the sorted array into a single string
     return strArr.join('');
 }
+
+// Time Complexity: O(n log n) - The sorting operation dominates the time complexity, where n is the number of elements in the array.
+// Space Complexity: O(n) - We create a new array of strings, which requires additional space proportional to the number of elements in the input array.

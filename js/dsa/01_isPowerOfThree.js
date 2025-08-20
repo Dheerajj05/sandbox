@@ -15,3 +15,5 @@ function isPowerOfThree(n) {
 
     return n === 1; // If we end up with 1, then n is a power of three
 }
+// Time Complexity: O(log n) - The loop runs as long as n is divisible by 3, which reduces n logarithmically.
+// Space Complexity: O(1) - We are using a constant amount of space for the variable n and the loop control variable.

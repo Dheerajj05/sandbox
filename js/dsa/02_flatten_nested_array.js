@@ -11,6 +11,8 @@ console.log(flattenedArray); // Output: [1, 2, 3, 4, 5, 6, 7]
 // This function uses recursion to handle any level of nesting in the array.
 // The reduce method is used to accumulate the results, checking if each element is an array and flattening it accordingly.
 // This approach ensures that all elements are brought to the top level of the array, regardless of how deeply nested they were.
+// Time Complexity: O(n), where n is the total number of elements in the nested array.
+// Space Complexity: O(n), for the new flattened array that is created.
 
 // Iterative approach using a stack
 function flattenArray(arr) {
@@ -43,3 +45,7 @@ function flattenArray(arr) {
 // For the purpose of user debugging:
 console.log(flattenArray([1, [2, [3, 4], 5], 6])); 
 // Output: [1, 2, 3, 4, 5, 6]
+// Time Complexity: O(n), where n is the total number of elements in the nested array.
+// Space Complexity: O(n), for the new flattened array that is created.
+// This approach uses a stack to handle the elements iteratively, avoiding the potential stack overflow issues
+// that can occur with deep recursion in the recursive approach.

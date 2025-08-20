@@ -32,6 +32,8 @@ function isAnagramBetter(s, t) {
 
     return sortedS === sortedT; // Compare the sorted strings
 }
+// Time Complexity: O(n log n) - Sorting both strings takes O(n log n) time.
+// Space Complexity: O(n) - The space used for the sorted strings is proportional to their length.
 
 //Optimal Approach:
 // - Use a frequency counter to count the occurrences of each character in both strings and compare the counts.
@@ -53,3 +55,6 @@ function isAnagramOptimal(s, t) {
 
     return true; // All counts should be zero if they are anagrams
 } 
+
+// Time Complexity: O(n) - The function iterates through each string once to count characters, leading to linear time complexity.
+// Space Complexity: O(n) - The space used for the character count object is proportional to the number of unique characters in the strings, which can be at most n in the worst case.

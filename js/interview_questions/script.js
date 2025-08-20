@@ -59,6 +59,16 @@ Array.prototype.myMap = function(callback) {
 
     }
 }
+// For Sparse Arrays
+Array.prototype.myMapSparse = function(callback) {
+    let temp = [];
+    for (let i = 0; i < this.length; i++) {
+        if (i in this) { // Check if the index exists in the array
+            temp.push(callback(this[i], i, this));
+        }
+    }
+    return temp;
+}
 
 
 //Filter Polyfill

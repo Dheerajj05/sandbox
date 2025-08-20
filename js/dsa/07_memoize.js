@@ -24,3 +24,14 @@ function memoize(func) {
         return result; // Return the computed result
     }
 }
+
+// Example usage:
+const expensiveFunction = (num) => {
+    // Simulating an expensive computation
+    console.log(`Computing result for ${num}`);
+    return num * 2; // Example computation
+}   
+const memoizedFunction = memoize(expensiveFunction);
+console.log(memoizedFunction(5)); // Computes and caches the result
+console.log(memoizedFunction(5)); // Returns cached result without recomputing
+console.log(memoizedFunction(10)); // Computes and caches a different result

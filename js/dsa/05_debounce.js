@@ -30,3 +30,12 @@ function debounce(func, wait) {
         }, wait);
     };
 }
+
+// Example usage:
+const log = () => console.log('Function executed');
+const debouncedLog = debounce(log, 2000); // Debounce the log function to execute after 2000 milliseconds
+// Simulating rapid calls
+setInterval(() => {
+    debouncedLog(); // This will log 'Function executed' only once every 2 seconds, even though it is being called every 500 milliseconds
+}, 500); // Call every 500 milliseconds
+// The debounced function will ensure that the log function is not called more than once every 2 seconds, even though it is being called every

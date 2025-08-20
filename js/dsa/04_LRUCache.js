@@ -53,3 +53,21 @@ class LRUCache {
     }
 
 }
+
+// Time Complexity:
+// - `get(key)`: O(1) - Accessing a key in a Map is O(1).
+// - `put(key, value)`: O(1) - Inserting or updating a key in a Map is O(1), and deleting the least recently used item is also O(1) since it involves removing the first item in the Map.
+// Space Complexity: O(capacity) - The space used by the cache is proportional to its capacity, as it stores at most `capacity` key-value pairs.
+// Note: The Map data structure maintains the order of insertion, which is crucial for implementing the LRU cache efficiently.
+// Example usage:
+const lruCache = new LRUCache(2);
+lruCache.put(1, 1); // Cache is {1=1}
+lruCache.put(2, 2); // Cache is {1=1, 2=2}
+console.log(lruCache.get(1)); // Returns 1, Cache is {2=2, 1=1} (1 is now most recently used)
+lruCache.put(3, 3); // Evicts key 2, Cache is {1=1, 3=3}
+console.log(lruCache.get(2)); // Returns -1 (not found)
+lruCache.put(4, 4); // Evicts key 1, Cache is {3=3, 4=4}
+console.log(lruCache.get(1)); // Returns -1 (not found)
+console.log(lruCache.get(3)); // Returns 3 (found)
+console.log(lruCache.get(4)); // Returns 4 (found)
+// The cache now contains {3=3, 4=4}, with 3 and 4 being the most recently used items.

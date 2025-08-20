@@ -15,12 +15,21 @@
 function throttle(func, wait) {
     let isThrottled = false;
 
-    return function() {
+    return function(...args) {
         if (isThrottled) return;
-        func.apply(this, arguments);
+        func.apply(this, args); // Call the original function with the provided arguments
         isThrottled = true;
         setTimeout(() => {
             isThrottled = false;
         }, wait);
     }
 }
+
+// Example usage:
+const log = () => console.log('Function executed');
+const throttledLog = throttle(log, 2000); // Throttle the log function to execute at most once every 2000 milliseconds  
+// Simulating rapid calls
+setInterval(() => {
+    throttledLog(); // This will log 'Function executed' at most once every 2 seconds
+}, 500); // Call every 500 milliseconds
+// The throttled function will ensure that the log function is not called more than once every 2 seconds, even though it is being called every 500 milliseconds.
