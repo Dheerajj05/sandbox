@@ -1,0 +1,13 @@
+// Introduction to Queue
+// Queue is a linear data structure that follows the FIFO (First In First Out) principle.
+// In a queue, the element that is added first is the first one to be removed.
+// Basic operations of a queue include:
+// 1. Enqueue: Add an element to the end of the queue.
+// 2. Dequeue: Remove an element from the front of the queue.
+// 3. Peek/Front: Get the front element of the queue without removing it.
+// 4. isEmpty: Check if the queue is empty.
+// 5. Size: Get the number of elements in the queue.
+
+// Visual Representation:
+// Front [1, 2, 3, 4, 5] Rear
+

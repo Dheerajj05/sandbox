@@ -30,16 +30,22 @@ function maxSubArrayBruteForce(nums) {
 
 // Optimized Approach using Kadane's Algorithm
 // - This approach uses a single pass through the array to find the maximum subarray sum.
-// - It maintains a running sum and updates the maximum sum found so far.
-// - This has a time complexity of O(n) and a space complexity of O(1
+// - It maintains a running sum and resets it to zero if it becomes negative.
+// - This has a time complexity of O(n) and a space complexity of O(1).
+
 
 function maxSubArray(nums) {
-    let maxSum = nums[0]; // Initialize maxSum with the first element
-    let currentSum = nums[0]; // Initialize currentSum with the first element
+    let maxSum = -Infinity; // Initialize maxSum to the smallest possible value
+    let currentSum = 0; // Initialize currentSum to 0
 
-    for (let i = 1; i < nums.length; i++) {
-        currentSum = Math.max(nums[i], currentSum + nums[i]); // Update currentSum to either the current element or the sum of currentSum and the current element
-        maxSum = Math.max(maxSum, currentSum); // Update maxSum if currentSum is greater
+    for (let i = 0; i < nums.length; i++) {
+        currentSum += nums[i]; // Add the current element to currentSum
+        if (currentSum > maxSum) {
+            maxSum = currentSum; // Update maxSum if currentSum is greater
+        }
+        if (currentSum < 0) {
+            currentSum = 0; // Reset currentSum to 0 if it becomes negative
+        }
     }
 
     return maxSum; // Return the maximum subarray sum
