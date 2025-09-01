@@ -11,3 +11,38 @@
 // Visual Representation:
 // Front [1, 2, 3, 4, 5] Rear
 
+class Queue {
+    constructor(k) {
+        this.queue = []; // Initialize an empty array to hold queue elements
+
+    }
+    enqueue(element) {
+        this.queue.push(element); // Add the element to the end of the queue
+    }
+
+    dequeue() {
+        if (this.isEmpty()) {
+            return "Queue is empty"; // Return a message if trying to dequeue from an empty queue
+        }
+        return this.queue.shift(); // Remove and return the front element of the queue
+    }
+
+    isEmpty() {
+        return this.queue.length === 0; // Return true if the queue is empty, false otherwise
+    }
+
+    front() {
+        if (this.isEmpty()) {
+            return "Queue is empty"; // Return a message if trying to peek at an empty queue
+        }
+        return this.queue[0]; // Return the front element without removing it
+    }
+
+    size() {
+        return this.queue.length; // Return the number of elements in the queue
+    }
+
+    printQueue() {
+        return this.queue; // Return the current state of the queue
+    }
+}
