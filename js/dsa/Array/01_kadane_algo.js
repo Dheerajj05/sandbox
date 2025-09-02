@@ -50,3 +50,32 @@ function maxSubArray(nums) {
 
     return maxSum; // Return the maximum subarray sum
 }
+
+// ------------------------------return indices of the subarray-------------------------------------
+// If you also need to return the starting and ending indices of the subarray with the largest sum,
+// you can modify the Kadane's Algorithm implementation as follows:
+
+function maxSubArrayWithIndices(nums) {
+    let maxSum = -Infinity; // Initialize maxSum to the smallest possible value
+    let currentSum = 0; // Initialize currentSum to 0
+    let start = 0; // Start index of the current subarray
+    let end = 0; // End index of the maximum subarray
+    let tempStart = 0; // Temporary start index for the current subarray
+
+    for (let i = 0; i < nums.length; i++) {
+        currentSum += nums[i]; // Add the current element to currentSum
+
+        if (currentSum > maxSum) {
+            maxSum = currentSum; // Update maxSum if currentSum is greater
+            start = tempStart; // Update start index to the temporary start
+            end = i; // Update end index to the current index
+        }
+
+        if (currentSum < 0) {
+            currentSum = 0; // Reset currentSum to 0 if it becomes negative
+            tempStart = i + 1; // Move the temporary start to the next index
+        }
+    }
+
+    return { maxSum, start, end }; // Return the maximum subarray sum and its indices
+}
