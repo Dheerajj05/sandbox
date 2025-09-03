@@ -31,6 +31,7 @@ function maxProfitBruteForce(prices) {
 
 // Optimal Approach:
 // - Use a single pass through the array to find the minimum price seen so far and calculate the profit at each step.
+// Greedy approach: keep track of the minimum price and calculate potential profit at each price point.
 // - This has a time complexity of O(n) and a space complexity of O(1). 
 
 function maxProfit(prices) {
