@@ -9,6 +9,9 @@
 // if anytime the character does not exist in the first string, return false
 // - if all characters exist, return true
 
+// LoopHole: It does not exactly check the frequency of charaters.
+// Example: s ="aacc" t = "ccac"
+
 function isAnagram (s,t) {
     let arr = s.split("");
     for(let i = 0 ; i<t.length; i++){

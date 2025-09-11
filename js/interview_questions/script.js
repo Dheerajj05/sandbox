@@ -55,9 +55,10 @@ Array.prototype.myMap = function(callback) {
     for(i =0 ; i<this.length; i++){
 
         temp.push(callback(this[i], i, this));
-        return temp;
+   
 
     }
+    return temp;
 }
 // For Sparse Arrays
 Array.prototype.myMapSparse = function(callback) {
